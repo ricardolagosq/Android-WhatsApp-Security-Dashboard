@@ -1,0 +1,16 @@
+{
+  "name": "android-whatsapp-security-dashboard",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace @awsd/web\" \"npm run dev --workspace @awsd/api\"",
+    "build": "npm run build --workspace @awsd/web && npm run build --workspace @awsd/api",
+    "lint": "npm run lint --workspace @awsd/web && npm run lint --workspace @awsd/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
